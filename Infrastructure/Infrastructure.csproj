@@ -7,11 +7,15 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.7" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="Data\SeedData" />
+  </ItemGroup>
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+<!--    <Nullable>enable</Nullable>-->
   </PropertyGroup>
 
 </Project>
