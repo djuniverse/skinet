@@ -1,6 +1,6 @@
-using System.Runtime.CompilerServices;
+using API.Extensions;
 using API.Helpers;
-using Core.Interfaces;
+using API.Middleware;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -29,32 +29,41 @@ using (var scope = provider.CreateScope())
         var logger = loggerFactory.CreateLogger<Program>();
         logger.LogError(ex, "An error occured during migration");
     }
-    
 }
 // <--- uruchamianie migracji na starcie
 
 
-
-
-
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
-builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddAutoMapper(typeof(MappingProfiles));
 
 builder.Services.AddControllers();
+
+builder.AddApllicationServices();
+
+builder.AddSwaggerDocumentation();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+app.UseMiddleware<ExceptionMiddleware>();
 if (app.Environment.IsDevelopment())
 {
-    app.UseDeveloperExceptionPage();
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    //mamy inna obsluge bledow
+    // app.UseDeveloperExceptionPage();
+
+
+    // app.UseSwagger();
+    // app.UseSwaggerUI();
 }
+
+app.UseSwaggerDocumentation();
+
+
+//strona dla errorow nieobsluzonych
+app.UseStatusCodePagesWithReExecute("/errors/{0}");
 
 app.UseStaticFiles();
 
