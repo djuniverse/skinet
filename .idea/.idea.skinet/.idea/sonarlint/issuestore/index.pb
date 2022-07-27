@@ -31,20 +31,8 @@ K
 Core/Entities/BaseEntity.cs,6\c\6c4b128c1557e2f239291e60e0400f85dda315f8
 W
 'Infrastructure/Data/StoreContextSeed.cs,0\4\044509673b83fa5d610532dde67f4de747a95a53
-b
-2Infrastructure/Data/Config/ProductConfiguration.cs,0\3\03da2870b861b185bc980f003575b6db55d3f431
-S
-#Infrastructure/Data/StoreContext.cs,d\2\d2b69ff0c5ffa8f4470f22e540a1887996bbf5aa
 H
 Core/Entities/Product.cs,4\c\4c0c36c298b0ec3240fd67a8266ffbd1845cb633
-n
->Core/Specifications/ProductsWithTypesAndBrandsSpecification.cs,f\3\f3cb73285869c8d7f329321c832e38f50330446b
-]
--Infrastructure/Data/SpecifiactionEvaluator.cs,9\c\9c8a0f3e53a4b1d2d9c2d0e697e064b2bca3767b
-U
-%Core/Specifications/ISpecification.cs,5\f\5fd3f848e44f36fbe552119ffbd1872bc3c239a7
-X
-(Core/Specifications/BaseSpecification.cs,7\e\7e77b9ce0aabafb960799a6d8c118fcca945acdb
 N
 API/Dtos/ProductToReturnDto.cs,0\8\08cff3645c8ce7329d30334e8c05672372457b7e
 N

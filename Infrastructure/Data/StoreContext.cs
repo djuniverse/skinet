@@ -19,5 +19,20 @@ public class StoreContext :DbContext
         base.OnModelCreating(modelBuilder);
         //na podstawie refleksji pobiera konfigurację Data/Config/ProductConfiguration
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        
+        //na potrzeby konwersji decimali w sqllite
+        
+        if (Database.ProviderName == "Microsoft.EntityFrameworkCore.Sqlite")
+        {
+            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+            {
+                var properites = entityType.ClrType.GetProperties().Where(p => p.PropertyType == typeof(decimal));
+
+                foreach (var property in properites)
+                {
+                    modelBuilder.Entity(entityType.Name).Property(property.Name).HasConversion<double>();
+                }
+            }
+        }
     }
 }

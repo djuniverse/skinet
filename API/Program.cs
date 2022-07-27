@@ -32,6 +32,9 @@ using (var scope = provider.CreateScope())
 }
 // <--- uruchamianie migracji na starcie
 
+builder.Services.AddCors(opt =>
+    opt.AddPolicy("CorsPolicy", policy =>
+        policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200")));
 
 builder.Services.AddAutoMapper(typeof(MappingProfiles));
 
@@ -69,7 +72,8 @@ app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+app.UseCors("CorsPolicy");
+app.UseAuthorization(); 
 
 app.MapControllers();
 
