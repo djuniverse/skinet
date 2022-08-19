@@ -55,8 +55,6 @@ R
 "API/Controllers/BuggyController.cs,9\f\9f466a56738838c829ca006b2dc0a110ec49b2a5
 R
 "API/Controllers/ErrorController.cs,4\b\4b9b7af1dc9a85f43acd8cd8dc099452d493eb2d
-T
-$API/Controllers/BaseApiController.cs,e\5\e5bb8d8298ca6278213917c55e30f97981f06305
 J
 API/Errors/ApiException.cs,a\b\abad65426b87f9d9679ebdb02ced0a99960e0338
 U
@@ -77,16 +75,8 @@ U
 %Core/Specifications/ISpecification.cs,5\f\5fd3f848e44f36fbe552119ffbd1872bc3c239a7
 X
 (Infrastructure/Data/GenericRepository.cs,e\9\e9b05d51e38508172e24ffd5c9a19db63cb4ca63
-U
-%Core/Interfaces/IGenericRepository.cs,0\a\0a100d39202301f562be29494bf40c30f121a0d3
-X
-(Core/Specifications/ProductSpecParams.cs,7\6\76ecf3841ebe98cef11026db2f7759cb5b8843f3
 o
 ?Core/Specifications/ProductsWithFiltersForCountSpecification.cs,4\9\49851102167176cbd5a5546350a022ed9130afa6
-U
-%API/Controllers/ProductsController.cs,0\6\06e029ba27858d90a7b4879dc023eb10afc91eec
-n
->Core/Specifications/ProductsWithTypesAndBrandsSpecification.cs,f\3\f3cb73285869c8d7f329321c832e38f50330446b
 S
 #Infrastructure/Data/StoreContext.cs,d\2\d2b69ff0c5ffa8f4470f22e540a1887996bbf5aa
 >
