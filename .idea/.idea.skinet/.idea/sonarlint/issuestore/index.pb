@@ -67,8 +67,6 @@ b
 2Infrastructure/Data/Config/ProductConfiguration.cs,0\3\03da2870b861b185bc980f003575b6db55d3f431
 ]
 -Infrastructure/Data/SpecifiactionEvaluator.cs,9\c\9c8a0f3e53a4b1d2d9c2d0e697e064b2bca3767b
-X
-(Core/Specifications/BaseSpecification.cs,7\e\7e77b9ce0aabafb960799a6d8c118fcca945acdb
 I
 API/Helpers/Pagination.cs,3\4\3448108a29569f53649e06a283a9a135ab0fc7fb
 U
