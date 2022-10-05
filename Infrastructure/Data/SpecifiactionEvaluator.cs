@@ -1,6 +1,7 @@
 ﻿using Core.Entities;
 using Core.Specifications;
 using Microsoft.EntityFrameworkCore;
+using SQLitePCL;
 
 namespace Infrastructure.Data;
 
@@ -16,7 +17,8 @@ public class SpecifiactionEvaluator<TEntity> where TEntity: BaseEntity
 
         if (spec.OrderBy != null)
         {
-            query = query.OrderBy(spec.OrderBy); 
+            query = query.OrderBy(spec.OrderBy);
+            
         }
         
         if (spec.OrderByDescending != null)
@@ -30,7 +32,7 @@ public class SpecifiactionEvaluator<TEntity> where TEntity: BaseEntity
             query = query.Skip(spec.Skip).Take(spec.Take);
             
         }
-        
+
         query = spec.Includes.Aggregate(query, (current, include) => current.Include(include));
         return query;
     }
