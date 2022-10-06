@@ -5,8 +5,6 @@ R
 "API/Properties/launchSettings.json,7\c\7c47631329793afa3cd6258a244728b804c8ab2d
 F
 API/WeatherForecast.cs,f\b\fbf0a4ec759e19a4d8c06958a951d85a4b95ac35
-D
-API/appsettings.json,c\9\c9ded09c5f665b70d1fa55879c92e686fed68957
 @
 Core/Core.csproj,1\4\1451827062291137729e2a6555c6ed55d31db0e7
 X
@@ -55,8 +53,6 @@ S
 #Infrastructure/Data/StoreContext.cs,d\2\d2b69ff0c5ffa8f4470f22e540a1887996bbf5aa
 I
 API/Helpers/Pagination.cs,3\4\3448108a29569f53649e06a283a9a135ab0fc7fb
-P
- API/appsettings.Development.json,1\9\1954b16dd075ae73405e77c34b7bc3a3c0fdbe46
 K
 Core/Entities/BaseEntity.cs,6\c\6c4b128c1557e2f239291e60e0400f85dda315f8
 M
@@ -73,3 +69,23 @@ H
 Core/Entities/Product.cs,4\c\4c0c36c298b0ec3240fd67a8266ffbd1845cb633
 X
 (Core/Specifications/BaseSpecification.cs,7\e\7e77b9ce0aabafb960799a6d8c118fcca945acdb
+>
+API/Program.cs,5\9\592888ae48b31fae7f33797af4163cb7a377a4cf
+o
+?Core/Specifications/ProductsWithFiltersForCountSpecification.cs,4\9\49851102167176cbd5a5546350a022ed9130afa6
+U
+%Core/Specifications/ISpecification.cs,5\f\5fd3f848e44f36fbe552119ffbd1872bc3c239a7
+X
+(Infrastructure/Data/GenericRepository.cs,e\9\e9b05d51e38508172e24ffd5c9a19db63cb4ca63
+]
+-Infrastructure/Data/SpecifiactionEvaluator.cs,9\c\9c8a0f3e53a4b1d2d9c2d0e697e064b2bca3767b
+U
+%Core/Interfaces/IGenericRepository.cs,0\a\0a100d39202301f562be29494bf40c30f121a0d3
+U
+%API/Controllers/ProductsController.cs,0\6\06e029ba27858d90a7b4879dc023eb10afc91eec
+X
+(Core/Specifications/ProductSpecParams.cs,7\6\76ecf3841ebe98cef11026db2f7759cb5b8843f3
+X
+(Infrastructure/Data/ProductRepository.cs,e\c\eceb03687d7e5677d37b36f88a23e697b5c74e6f
+n
+>Core/Specifications/ProductsWithTypesAndBrandsSpecification.cs,f\3\f3cb73285869c8d7f329321c832e38f50330446b

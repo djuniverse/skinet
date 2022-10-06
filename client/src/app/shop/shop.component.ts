@@ -11,7 +11,7 @@ import {ShopParams} from "../shared/models/shopParams";
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent implements OnInit {
-  @ViewChild('search', {static: true}) searchTerm: ElementRef; //#search na strine
+  @ViewChild('search', {static: false}) searchTerm: ElementRef; //#search na strine
   products: IProduct[];
   brands: IBrand[];
   types: IType[];
