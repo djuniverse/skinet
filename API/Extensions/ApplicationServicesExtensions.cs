@@ -10,6 +10,7 @@ public static class ApplicationServicesExtensions
     public static WebApplicationBuilder AddApllicationServices(this WebApplicationBuilder builder)
     {
         builder.Services.AddScoped<IProductRepository, ProductRepository>();
+        builder.Services.AddScoped<IBasketRepository, BasketRepository>();
         builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         
         builder.Services.Configure<ApiBehaviorOptions>(options => options.InvalidModelStateResponseFactory = actionContext =>
