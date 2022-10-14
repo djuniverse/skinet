@@ -81,3 +81,9 @@ S
 #Infrastructure/Data/StoreContext.cs,d\2\d2b69ff0c5ffa8f4470f22e540a1887996bbf5aa
 U
 %API/Controllers/ProductsController.cs,0\6\06e029ba27858d90a7b4879dc023eb10afc91eec
+O
+Core/Entities/CustomerBasket.cs,8\c\8c8264d7547ba8317170d6a65ba76c8c40c33220
+T
+$Infrastructure/Infrastructure.csproj,1\e\1eee757ae25be91d8006f58490360abe9e76bfb0
+K
+Core/Entities/BasketItem.cs,b\7\b727d50cb973a1562549eeecdcdf991bf30277d3
