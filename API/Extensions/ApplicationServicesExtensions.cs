@@ -1,14 +1,16 @@
 ﻿using API.Errors;
 using Core.Interfaces;
 using Infrastructure.Data;
+using Infrastructure.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Extensions;
 
 public static class ApplicationServicesExtensions
 {
-    public static WebApplicationBuilder AddApllicationServices(this WebApplicationBuilder builder)
+    public static WebApplicationBuilder AddApplicationServices(this WebApplicationBuilder builder)
     {
+        builder.Services.AddScoped<ITokenService, TokenService>();
         builder.Services.AddScoped<IProductRepository, ProductRepository>();
         builder.Services.AddScoped<IBasketRepository, BasketRepository>();
         builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));

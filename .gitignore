@@ -2,7 +2,7 @@
 bin
 appsettings.json
 appsettings.Development.json
-*.db
+*.db*
 
 
 ### JetBrains template

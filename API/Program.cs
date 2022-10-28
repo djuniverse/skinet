@@ -1,7 +1,10 @@
 using API.Extensions;
 using API.Helpers;
 using API.Middleware;
+using Core.Entities.Identity;
 using Infrastructure.Data;
+using Infrastructure.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using StackExchange.Redis;
 
@@ -15,7 +18,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddDbContext<StoreContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<AppIdentityDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("IdentityConnection")));
 
+
+builder.AddIdentityServices();
 
 //Redis
 builder.Services.AddSingleton<IConnectionMultiplexer>(c =>
@@ -37,6 +44,12 @@ using (var scope = provider.CreateScope())
         await context.Database.MigrateAsync();
         //zasilenie bazy z plikow
         await StoreContextSeed.SeedAsync(context, loggerFactory);
+
+        var userManager = scope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
+        var identityContext = scope.ServiceProvider.GetRequiredService<AppIdentityDbContext>();
+        await identityContext.Database.MigrateAsync();
+        await AppIdentityDbContextSeed.SeedUsersAsync(userManager);
+
     }
     catch (Exception ex)
     {
@@ -54,7 +67,8 @@ builder.Services.AddAutoMapper(typeof(MappingProfiles));
 
 builder.Services.AddControllers();
 
-builder.AddApllicationServices();
+builder.AddApplicationServices();
+
 
 builder.AddSwaggerDocumentation();
 
@@ -88,6 +102,7 @@ app.UseStaticFiles();
 app.UseHttpsRedirection();
 
 app.UseCors("CorsPolicy");
+app.UseAuthentication();
 app.UseAuthorization(); 
 
 app.MapControllers();
